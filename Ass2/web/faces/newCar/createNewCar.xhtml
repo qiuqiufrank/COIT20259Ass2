@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:ago="http://java.sun.com/jsf/composite/apress" xml:lang="en" lang="en">
+
+    <ui:composition template="../templates/layout.xhtml">
+        <ui:define name="title">Create a brand new car</ui:define>
+        <ui:define name="content">
+
+            <h:form class="form">
+                <table class="table" border="0">
+
+                    <ago:createCarRows car="#{newCarController.newCar}"/>
+                    <ago:inputRow name="Warranty" iid="warranty" value="#{newCarController.newCar.warranty}" />
+                    <ago:inputRow name="Extending Warranty" iid="eWarranty" value="#{newCarController.newCar.extendingWarranty}" />
+                    <ago:inputRow name="Road Side Assistance Package" iid="rsap" value="#{newCarController.newCar.roadsideAssistancePackages}" />
+                    <ago:inputRow name="Number of Cars" iid="noc" value="#{newCarController.newCar.quantity}" />
+                </table>
+
+
+                <h:commandButton class="button" value="Create a brand new car" action="#{newCarController.doCreateNewCar}"/>
+            </h:form>
+
+            <div>
+                <ago:link name="The stock of brand new cars" href="newCarList.faces"/>
+                <ago:link name="Main Page" href="../../index.faces"/>              
+            </div>
+        </ui:define>
+
+    </ui:composition>
+
+</html>
+
+
+
+

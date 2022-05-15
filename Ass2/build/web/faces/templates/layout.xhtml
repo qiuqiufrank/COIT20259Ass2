@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ago="http://java.sun.com/jsf/composite/apress"
+      xml:lang="en" lang="en">
+
+    <h:head>
+        <h:outputStylesheet library="css" name="style.css"/>
+        <title>
+            <ui:insert name="title" >Default title</ui:insert>
+        </title>
+    </h:head>
+    <body>
+        <h1 class="title">
+            <ui:insert name="title" >Default title</ui:insert>
+        </h1>
+        <h:outputText id="error" value="" binding="#{projectController.errorComponent}" />
+        <h:messages for="error" showDetail="true" style="color:#b00000" />
+        
+        <h:outputText id="info" value="" binding="#{projectController.infoComponent}" />
+        <h:messages for="info" showDetail="true" style="color:#008000" />
+
+        <ui:insert name="content">Default content</ui:insert>
+
+
+
+    </body>
+</html>

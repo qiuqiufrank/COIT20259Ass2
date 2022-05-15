@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:ago="http://java.sun.com/jsf/composite/apress" xml:lang="en" lang="en">
+
+    <ui:composition template="../templates/layout.xhtml">
+        <ui:define name="title">Create a new Customer</ui:define>
+        <ui:define name="content">
+
+            <h:form class="form">
+                <table class="table" border="0">
+                    <ago:inputRow name="Name" iid="name" value="#{customerController.customer.name}" />
+                    <ago:inputRow name="Address" iid="address" value="#{customerController.customer.address}" />
+                    <ago:inputRow name="Phone Number" iid="pn" value="#{customerController.customer.phoneNumber}" />
+                    <ago:inputRow name="Email Address" iid="ea" value="#{customerController.customer.email}" />
+                </table>
+                <h:commandButton class="button" value="Create Customer" action="#{customerController.doCreateCustomer}"/>
+            </h:form>
+
+            <div>
+                <ago:link name="Customer List" href="customerList.faces"/>
+                <ago:link name="Main Page" href="../../index.faces"/>              
+            </div>
+
+
+        </ui:define>
+
+    </ui:composition>
+
+</html>
+
+
+
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ago="http://java.sun.com/jsf/composite/apress"
+      xmlns:composite="http://java.sun.com/jsf/composite">
+
+    <composite:interface>
+        <composite:attribute name="car" required="true" />
+    </composite:interface>
+
+    <composite:implementation>
+        <ago:inputRow name="Reference Number" iid="rn" value="#{cc.attrs.car.referenceNumber}" />
+        <ago:inputRow name="Car Make" iid="cmake" value="#{cc.attrs.car.make}" />
+        <ago:inputRow name="Car Model" iid="cmodel" value="#{cc.attrs.car.model}" />
+        <ago:inputRow name="Drive Type" iid="dt" value="#{cc.attrs.car.driveType}" />
+        <ago:inputRow name="Body Color" iid="bc" value="#{cc.attrs.car.color}" />
+        <ago:inputRow name="Transmission" iid="transmission" value="#{cc.attrs.car.transmission}" />
+        <ago:inputRow name="Car Engine" iid="ce" value="#{cc.attrs.car.engine}" />
+        <ago:inputRow name="Fuel Type" iid="ft" value="#{cc.attrs.car.fuelType}" />
+        <ago:inputRow name="Number of Doors" iid="nod" value="#{cc.attrs.car.doors}" />
+        <ago:inputRow name="Number of Seats" iid="nos" value="#{cc.attrs.car.seats}" />
+        <ago:inputRow name="Price" iid="price" value="#{cc.attrs.car.price}" />
+    </composite:implementation>
+</html>

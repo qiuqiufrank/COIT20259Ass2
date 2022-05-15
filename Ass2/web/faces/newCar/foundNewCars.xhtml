@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:ago="http://java.sun.com/jsf/composite/apress" xml:lang="en"
+    lang="en">
+
+<ui:composition template="../templates/foundTemplate.xhtml">
+    <ui:define name="foundTitle">The found brand new cars</ui:define>
+    <ui:define name="searchResults">
+        <h:dataTable class="data-table found" value="#{newCarController.newCarList}" var="it" border="1">
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Reference Number" />
+                </f:facet>
+                <h:outputText value="#{it.referenceNumber}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Make" />
+                </f:facet>
+                <h:outputText value="#{it.make}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Model" />
+                </f:facet>
+                <h:outputText value="#{it.model}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Drive Type" />
+                </f:facet>
+                <h:outputText value="#{it.driveType}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Colour" />
+                </f:facet>
+                <h:outputText value="#{it.color}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Transmission" />
+                </f:facet>
+                <h:outputText value="#{it.transmission}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Engine" />
+                </f:facet>
+                <h:outputText value="#{it.engine}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Fuel Type" />
+                </f:facet>
+                <h:outputText value="#{it.fuelType}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Doors" />
+                </f:facet>
+                <h:outputText value="#{it.doors}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Seats" />
+                </f:facet>
+                <h:outputText value="#{it.seats}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="No. of Cars" />
+                </f:facet>
+                <h:outputText value="#{it.quantity}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Warranty" />
+                </f:facet>
+                <h:outputText value="#{it.warranty}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Extending Warranty" />
+                </f:facet>
+                <h:outputText value="#{it.extendingWarranty}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Roadside Assistance Package" />
+                </f:facet>
+                <h:outputText value="#{it.roadsideAssistancePackages }" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Price" />
+                </f:facet>
+                <h:outputText value="#{it.price}">
+                    <f:convertNumber type="currency" currencySymbol="$" />
+                </h:outputText>
+            </h:column>
+        </h:dataTable>
+    </ui:define>
+    <ui:define name="searchStatus">
+        <h>Total brand new cars:#{newCarController.newCarList.size()} </h>
+    </ui:define>
+    <ui:define name="createNew">
+        <ago:link name="Create a brand new car" href="createNewCar.faces" />
+    </ui:define>
+</ui:composition>
+
+</html>

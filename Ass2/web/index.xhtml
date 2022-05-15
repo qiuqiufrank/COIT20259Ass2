@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:ago="http://java.sun.com/jsf/composite/apress" xml:lang="en" lang="en">
+
+    <ui:composition template="faces/templates/layout.xhtml">
+        <ui:define name="title">eBusiness: Product, Customer, and Order Management</ui:define>
+        <ui:define name="content">
+            <div>
+                <h2 class="subtitle">BRAND NEW AND USED CARS</h2>
+                <div class="flex-container">
+                    <ago:link name="Create a brand new car" href="faces/newCar/createNewCar.faces" />
+                    <ago:link name="The stock of brand new cars" href="faces/newCar/newCarList.faces" />
+                    <ago:link name="Seach for a brand new car" href="faces/newCar/searchNewCar.faces" />
+                </div>
+            
+                <div class="flex-container">
+                    <ago:link name="Create a used car" href="faces/usedCar/createUsedCar.faces" />
+                    <ago:link name="The stock of used cars" href="faces/usedCar/usedCarList.faces" />
+                    <ago:link name="Seach for a used car" href="faces/usedCar/searchUsedCar.faces" />
+                </div>
+
+            </div>
+
+            <div>
+                <h2 class="subtitle">CUSTOMERS</h2>
+                <div class="flex-container">
+                    <ago:link name="Create a new Customer" href="faces/customer/createCustomer.faces" />
+                    <ago:link name="List of Customers" href="faces/customer/customerList.faces" />
+                    <ago:link name="Seach for a Customer" href="faces/customer/searchCustomer.faces" />
+                </div>
+            </div>
+
+            <div>
+                <h2 class="subtitle">ORDERS OF CARS</h2>
+                <div class="flex-container">
+                    <ago:link name="Create a new Order" href="faces/order/createOrder.faces" />
+                    <ago:link name="List of Orders" href="faces/order/orderList.faces" />
+                    <ago:link name="Seach for an Order" href="faces/order/searchOrder.faces" />
+                </div>
+            </div>
+
+        </ui:define>
+
+    </ui:composition>
+<!--
+    <head>
+        <title>eBussiness</title>
+        <h:head />
+        <h:outputStylesheet library="css" name="style.css"/>
+    </head>
+    <body>
+
+        <h1 style="background: #48e">eBusiness: Product, Customer, and Order Management</h1>
+
+        <h2>BRAND NEW AND USED CARS</h2>
+        <ago:link name="here" href="faces/newCar/createNewCar.faces"/>
+        <a href="faces/newCar/createNewCar.faces">Create a brand new car</a>&nbsp;&nbsp;
+        <a href="faces/newCar/newCarList.faces">The stock of brand new cars</a>&nbsp;&nbsp;
+        <a href="w91/htmlcomponents.faces">Search for a brand new car</a><br/>
+        <a href="w91/htmlcomponents.faces">Create a used car</a>&nbsp;&nbsp;   
+        <a href="w91/htmlcomponents.faces">The stock of used cars</a>&nbsp;&nbsp;   
+        <a href="w91/htmlcomponents.faces">Search for a used car</a><br/>   
+
+
+
+        <h2>Composite Component JSF</h2>
+        <a href="w92/newBook.faces">Creates a new book</a><br/>
+        <a href="w92/newCD.faces">Creates a new CD</a><br/>
+        <a href="w92/listItems.faces">Lists all the items</a><br/>
+
+        <h2>Implicit Objects</h2>
+        <a href="w93/implicitObjects.faces">Shows implicit objects</a><br/>
+
+    </body>-->
+</html>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:ago="http://java.sun.com/jsf/composite/apress" xml:lang="en" lang="en">
+
+    <ui:composition template="../templates/layout.xhtml">
+        <ui:define name="title">Create a new car</ui:define>
+        <ui:define name="content">
+
+            <h:form class="form">
+                <table class="table" border="0">
+
+                    <ago:createCarRows car="#{usedCarController.usedCar}"/>
+
+
+                    <ago:inputRow name="Odometer" iid="odometer" value="#{usedCarController.usedCar.odometer}" />
+                    <ago:inputRow name="Rego No." iid="rn" value="#{usedCarController.usedCar.regoNo}" />
+                    <ago:inputRow name="Rego Expiry." iid="re" value="#{usedCarController.usedCar.regoExpiry}" />
+                    <ago:inputRow name="Service History" iid="sh" value="#{usedCarController.usedCar.serviceHistory}" />
+                    <ago:inputRow name="Vehicle Identification Number" iid="vin" value="#{usedCarController.usedCar.vin}" />
+                    <ago:inputRow name="Car History" iid="ch" value="#{usedCarController.usedCar.carHistory}" />
+                </table>
+
+
+                <h:commandButton class="button" value="Create a used car" action="#{usedCarController.doCreateUsedCar}"/>
+            </h:form>
+
+            <div>
+                <ago:link name="The stock of used cars" href="usedCarList.faces"/>
+                <ago:link name="Main Page" href="../../index.faces"/>              
+            </div>
+
+
+        </ui:define>
+
+    </ui:composition>
+
+</html>
+

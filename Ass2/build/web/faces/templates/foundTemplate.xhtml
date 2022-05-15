@@ -1,0 +1,24 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ago="http://java.sun.com/jsf/composite/apress" xml:lang="en" lang="en">
+
+<ui:composition template="layout.xhtml">
+    <ui:define name="title">
+        <ui:insert name="foundTitle">Found Title</ui:insert>
+    </ui:define>
+    <ui:define name="content">
+        <h:form class="form">
+            <ui:insert name="searchResults"></ui:insert>
+            <ui:insert name="searchStatus"></ui:insert>
+        </h:form>
+
+        <div>
+            <ui:insert name="createNew"></ui:insert>
+            <ago:link name="Main Page" href="../../index.faces" />
+        </div>
+
+    </ui:define>
+
+</ui:composition>
+
+</html>
