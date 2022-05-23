@@ -93,8 +93,9 @@ public class OrderController {
                 .collect(Collectors.toList()).get(0);
         order.setCar(selectedCar);
 
+    
         //Get selected customer by ID
-        Customer selectedCustomer = customerController.getAllCustomerList().stream().filter(c -> customerIdInOrder.equals(c.getId()))
+        Customer selectedCustomer = cEJB.findAllCustomers().stream().filter(c -> customerIdInOrder.equals(c.getId()))
                 .collect(Collectors.toList()).get(0);
         order.setCustomer(selectedCustomer);
         FacesContext ctx = FacesContext.getCurrentInstance();
@@ -107,10 +108,14 @@ public class OrderController {
             ctx.addMessage(projectController.getErrorComponent().getClientId(), new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error, not enough cars:", "Maximum quantity is " + selectedCar.getQuantity()));
             return null;
         }
-
+        //Store price for a order
+        order.setUnitPrice(selectedCar.getPrice());
         order.setQuantity(quantityInOrder);
+   
         selectedCar.setQuantity(selectedCar.getQuantity()-quantityInOrder);
         projectController.updateCar(selectedCar);
+        
+        
         Order o = oEJB.createOrder(order);
 
         ctx.addMessage(projectController.getInfoComponent().getClientId(), new FacesMessage(FacesMessage.SEVERITY_INFO, "Successfully created the order:", o.getCustomer().getName() + " " + o.getCar().getReferenceNumber()));

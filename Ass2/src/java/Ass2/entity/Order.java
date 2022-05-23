@@ -45,11 +45,15 @@ public class Order implements Serializable {
     @ManyToOne
     private Customer customer;
     private Car car;
+    
+    //***change add price
     private Date createAt;
     //set default to 1
     private int quantity=1;
-    @Transient
-    private float total;
+    
+    private float unitPrice;
+
+//    private float total;
 
     public Order() {
     }
@@ -68,6 +72,14 @@ public class Order implements Serializable {
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
+    }
+
+    public float getUnitPrice() {
+        return unitPrice;
+    }
+
+    public void setUnitPrice(float unitPrice) {
+        this.unitPrice = unitPrice;
     }
 
     public Car getCar() {
@@ -93,13 +105,13 @@ public class Order implements Serializable {
         this.createAt = createAt;
     }
 
-    public float getTotal() {
-        return total;
-    }
-
-    public void setTotal(float total) {
-        this.total = total;
-    }
+//    public float getTotal() {
+//        return total;
+//    }
+//
+//    public void setTotal(float total) {
+//        this.total = total;
+//    }
 
 
 }

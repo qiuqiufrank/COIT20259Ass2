@@ -3,14 +3,24 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/qiu/Documents/t3/COIT20259/assignment2/Ass2/src/java/Ass2/controller/ProjectController.java</file>
-            <file>file:/C:/Users/qiu/Documents/t3/COIT20259/assignment2/Ass2/src/java/Ass2/controller/NewCarController.java</file>
-            <file>file:/C:/Users/qiu/Documents/t3/COIT20259/assignment2/Ass2/src/java/Ass2/entity/Customer.java</file>
-            <file>file:/C:/Users/qiu/Documents/t3/COIT20259/assignment2/Ass2/src/java/Ass2/controller/OrderController.java</file>
-            <file>file:/C:/Users/qiu/Documents/t3/COIT20259/assignment2/Ass2/src/java/Ass2/ejb/CustomerEJB.java</file>
-            <file>file:/C:/Users/qiu/Documents/t3/COIT20259/assignment2/Ass2/src/java/Ass2/ejb/OrderEJB.java</file>
             <file>file:/C:/Users/qiu/Documents/t3/COIT20259/assignment2/Ass2/src/java/Ass2/ejb/NewCarEJB.java</file>
-            <file>file:/C:/Users/qiu/Documents/t3/COIT20259/assignment2/Ass2/src/conf/persistence.xml</file>
+            <file>file:/C:/Users/qiu/Documents/t3/COIT20259/assignment2/Ass2/web/faces/order/orderList.xhtml</file>
+            <file>file:/C:/Users/qiu/Documents/t3/COIT20259/assignment2/Ass2/src/java/Ass2/entity/NewCar.java</file>
+            <file>file:/C:/Users/qiu/Documents/t3/COIT20259/assignment2/Ass2/web/faces/customer/customerList.xhtml</file>
+            <file>file:/C:/Users/qiu/Documents/t3/COIT20259/assignment2/Ass2/src/java/Ass2/ejb/OrderEJB.java</file>
+            <file>file:/C:/Users/qiu/Documents/t3/COIT20259/assignment2/Ass2/src/java/Ass2/ejb/UsedCarEJB.java</file>
+            <file>file:/C:/Users/qiu/Documents/t3/COIT20259/assignment2/Ass2/web/faces/customer/createCustomer.xhtml</file>
+            <file>file:/C:/Users/qiu/Documents/t3/COIT20259/assignment2/Ass2/src/java/Ass2/controller/OrderController.java</file>
+            <file>file:/C:/Users/qiu/Documents/t3/COIT20259/assignment2/Ass2/src/java/Ass2/entity/Customer.java</file>
+            <file>file:/C:/Users/qiu/Documents/t3/COIT20259/assignment2/Ass2/web/faces/order/foundOrders.xhtml</file>
+            <file>file:/C:/Users/qiu/Documents/t3/COIT20259/assignment2/Ass2/src/java/Ass2/entity/Car.java</file>
+            <file>file:/C:/Users/qiu/Documents/t3/COIT20259/assignment2/Ass2/src/java/Ass2/controller/NewCarController.java</file>
+            <file>file:/C:/Users/qiu/Documents/t3/COIT20259/assignment2/Ass2/src/java/Ass2/controller/ProjectController.java</file>
+            <file>file:/C:/Users/qiu/Documents/t3/COIT20259/assignment2/Ass2/src/java/Ass2/entity/Order.java</file>
+            <file>file:/C:/Users/qiu/Documents/t3/COIT20259/assignment2/Ass2/src/java/Ass2/controller/CustomerController.java</file>
+            <file>file:/C:/Users/qiu/Documents/t3/COIT20259/assignment2/Ass2/src/java/Ass2/ejb/CustomerEJB.java</file>
+            <file>file:/C:/Users/qiu/Documents/t3/COIT20259/assignment2/Ass2/web/faces/customer/customerDetails.xhtml</file>
+            <file>file:/C:/Users/qiu/Documents/t3/COIT20259/assignment2/Ass2/src/java/Ass2/entity/UsedCar.java</file>
         </group>
     </open-files>
 </project-private>
