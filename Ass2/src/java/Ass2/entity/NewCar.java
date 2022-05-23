@@ -5,8 +5,6 @@ package Ass2.entity;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,8 +16,8 @@ import javax.persistence.NamedQuery;
 
 /**
  *
- * @author Faqiu Sun
- * @edited Hirvi
+ *
+ * @author Hirvi
  */
 @Entity
 @NamedQuery(name = NewCar.QueryAllCars, query = "select n from NewCar n")
@@ -33,12 +31,9 @@ public class NewCar extends Car {
     public static final String SearchNewCarByReference = "NewCar.SearchNewCarByReference";
     private static final long serialVersionUID = 1L;
 
-
     private int warranty;
     private int extendingWarranty;
     private String roadsideAssistancePackages;
-
-
 
     public NewCar() {
     }

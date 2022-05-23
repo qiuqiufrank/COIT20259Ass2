@@ -41,7 +41,6 @@ import javax.faces.context.FacesContext;
 /**
  *
  * @author Faqiu Sun
- * @edited Hirvi
  */
 @Named(value = "usedCarController")
 @ManagedBean
@@ -75,24 +74,26 @@ public class UsedCarController {
     public void setUsedCar(UsedCar usedCar) {
         this.usedCar = usedCar;
     }
-/**
- * 
- * @return Create the new user and redirect to the usedcar List page
- */
+
+    /**
+     *
+     * @return Create the new user and redirect to the usedcar List page
+     */
     public String doCreateUsedCar() {
         //usedCarList.add(usedCar);
         UsedCar nc = ucEJB.createUsedCar(usedCar);
         FacesContext ctx = FacesContext.getCurrentInstance();
         ctx.addMessage(projectController.getInfoComponent().getClientId(),
                 new FacesMessage(FacesMessage.SEVERITY_INFO,
-                        "Successfully created the used car:", nc.getMake() +
-                                " " + nc.getModel()));
+                        "Successfully created the used car:", nc.getMake()
+                        + " " + nc.getModel()));
         return "usedCarList.xhtml";
     }
-/**
- * 
- * @return Redirects the page to found used cars
- */
+
+    /**
+     *
+     * @return Redirects the page to found used cars
+     */
     public String searchUsedCars() {
         usedCarList = ucEJB.findUsedCars(usedCar.getReferenceNumber());
         return "foundUsedCars.xhtml";

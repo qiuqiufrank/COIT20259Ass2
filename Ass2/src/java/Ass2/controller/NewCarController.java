@@ -43,7 +43,7 @@ import javax.faces.context.FacesContext;
 /**
  *
  * @author Faqiu Sun
- * @edited Hirvi
+ *
  */
 @Named(value = "newCarController")
 @ManagedBean
@@ -61,10 +61,11 @@ public class NewCarController {
     public void setProjectController(ProjectController projectController) {
         this.projectController = projectController;
     }
-/**
- * 
- * @return This will return the list of new cars using the search keyword 
- */
+
+    /**
+     *
+     * @return This will return the list of new cars using the search keyword
+     */
     public String searchNewCars() {
         newCarList = ncEJB.findNewCars(newCar.getReferenceNumber());
         return "foundNewCars.xhtml";
@@ -85,10 +86,12 @@ public class NewCarController {
     public void setNewCar(NewCar newCar) {
         this.newCar = newCar;
     }
-/**
- * 
- * @return will create the new car and return the View element i.e. the xhtml 
- */
+
+    /**
+     *
+     * @return will create the new car and return the View element i.e. the
+     * xhtml
+     */
     public String doCreateNewCar() {
         NewCar nc = ncEJB.createNewCar(newCar);
         FacesContext ctx = FacesContext.getCurrentInstance();
@@ -96,14 +99,15 @@ public class NewCarController {
         // System.out.println("-----77");
         return "newCarList.xhtml";
     }
-/**
- * 
- * @return Formatted display of new Car list 
- */
+
+    /**
+     *
+     * @return Formatted display of new Car list
+     */
     public List<NewCar> getAllNewCarList() {
         newCarList = ncEJB.findAllNewCars();
-        for(NewCar n :newCarList){
-            System.out.println("-----97--"+n.getReferenceNumber());
+        for (NewCar n : newCarList) {
+            System.out.println("-----97--" + n.getReferenceNumber());
         }
         // System.out.println("---94--"+newCarList.size());
         return newCarList;
@@ -115,18 +119,21 @@ public class NewCarController {
     public void viewNewCarDetails() {
         newCar = ncEJB.findNewCars(newCar.getReferenceNumber()).get(0);
     }
-/**
- * 
- * @return The list of new cars 
- */
+
+    /**
+     *
+     * @return The list of new cars
+     */
     public List<NewCar> getNewCarList() {
         //  newCarList = bEJB.findAllNewCars();
         return newCarList;
     }
-/**
- *  Setter method for parameter of the class that contains the newCarList
- * @param newCarList 
- */
+
+    /**
+     * Setter method for parameter of the class that contains the newCarList
+     *
+     * @param newCarList
+     */
     public void setNewCarList(List<NewCar> newCarList) {
         this.newCarList = newCarList;
     }

@@ -5,8 +5,6 @@ package Ass2.entity;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -15,12 +13,12 @@ import javax.persistence.InheritanceType;
 
 /**
  *
- * @author Hirvi 
+ * @author Hirvi
  */
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 /**
- * This is the Car class that has the car details 
+ * This is the Car class that has the car details
  */
 public class Car implements Serializable {
 
@@ -39,7 +37,7 @@ public class Car implements Serializable {
     private float price;
 
     //set default to 1
-    private int quantity=1;
+    private int quantity = 1;
 
     public int getQuantity() {
         return quantity;

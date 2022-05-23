@@ -69,7 +69,7 @@
                 <f:facet name="header">
                     <h:outputText value="Total Price" />
                 </f:facet>
-                <h:outputText value="#{it.quantity*it.car.price}">
+                <h:outputText value="#{it.quantity*it.unitPrice}">
                     <f:convertNumber type="currency" currencySymbol="$" />
                 </h:outputText>
             </h:column>
