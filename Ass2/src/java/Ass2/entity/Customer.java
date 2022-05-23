@@ -5,8 +5,6 @@ package Ass2.entity;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Entity;
@@ -20,17 +18,20 @@ import javax.persistence.Transient;
 
 /**
  *
- * @author Faqiu Sun
+ * @author Hirvi
  */
 @Entity
 @NamedQuery(name = Customer.QueryAllCustomers, query = "select c from Customer c")
 @NamedQuery(name = Customer.QueryCustomerByID, query = "select c from Customer  c where c.id=:id")
 @NamedQuery(name = Customer.SearchCustomerByName, query = "select c from Customer  c where c.name=:name")
+/**
+ * This stores the customer details
+ */
 public class Customer implements Serializable {
 
-    public static final String SearchCustomerByName= "Customer.SearchCustomerByName";
-    public static final String QueryAllCustomers= "Customer.QueryAll";
-    public static final String QueryCustomerByID= "Customer. QueryCustomerByID";
+    public static final String SearchCustomerByName = "Customer.SearchCustomerByName";
+    public static final String QueryAllCustomers = "Customer.QueryAll";
+    public static final String QueryCustomerByID = "Customer. QueryCustomerByID";
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -44,7 +45,6 @@ public class Customer implements Serializable {
     // @Transient
     // private int orderNum;
 
-    
     public Customer() {
     }
 
@@ -97,14 +97,11 @@ public class Customer implements Serializable {
     }
 
     // public int getOrderNum() {
-        
     //     return orders.size();
     // }
-
     // public void setOrderNum(int orderNum) {
     //     this.orderNum = orderNum;
     // }
-
     @Override
     public int hashCode() {
         int hash = 0;
@@ -129,5 +126,4 @@ public class Customer implements Serializable {
 //    public String toString() {
 //        return "Ass2.Customer[ id=" + id + " ]";
 //    }
-    
 }

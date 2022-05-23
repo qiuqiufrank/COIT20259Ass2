@@ -5,11 +5,8 @@ package Ass2.entity;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
 import java.io.Serializable;
 import java.util.Date;
-
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,21 +17,23 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-
 /**
  *
- * @author Faqiu Sun
+ *
+ * @author Hirvi
  */
 @Entity
-@Table(name="orderline")
+@Table(name = "orderline")
 @NamedQuery(name = Order.QueryAllOrders, query = "select o from Order o")
 @NamedQuery(name = Order.SearchOrderById, query = "select o from Order  o where o.id=:id")
 @NamedQuery(name = Order.SearchOrdersByCustomer, query = "select o from Order  o where o.customer=:customer")
+/**
+ * This is the order class that stores the new order details or fetched details.
+ */
 public class Order implements Serializable {
 
-
-    public static final String SearchOrderById= "Customer.SearchOrderById";
-    public static final String SearchOrdersByCustomer= "Customer.SearchOrdersByCustomer";
+    public static final String SearchOrderById = "Customer.SearchOrderById";
+    public static final String SearchOrdersByCustomer = "Customer.SearchOrdersByCustomer";
     public static final String QueryAllOrders = "Order.QueryAll";
 
     private static final long serialVersionUID = 1L;
@@ -45,11 +44,12 @@ public class Order implements Serializable {
     @ManyToOne
     private Customer customer;
     private Car car;
+
     private Date createAt;
     //set default to 1
-    private int quantity=1;
-    @Transient
-    private float total;
+    private int quantity = 1;
+
+    private float unitPrice;
 
     public Order() {
     }
@@ -70,6 +70,14 @@ public class Order implements Serializable {
         this.customer = customer;
     }
 
+    public float getUnitPrice() {
+        return unitPrice;
+    }
+
+    public void setUnitPrice(float unitPrice) {
+        this.unitPrice = unitPrice;
+    }
+
     public Car getCar() {
         return car;
     }
@@ -77,6 +85,7 @@ public class Order implements Serializable {
     public void setCar(Car car) {
         this.car = car;
     }
+
     public int getQuantity() {
         return quantity;
     }
@@ -92,14 +101,5 @@ public class Order implements Serializable {
     public void setCreateAt(Date createAt) {
         this.createAt = createAt;
     }
-
-    public float getTotal() {
-        return total;
-    }
-
-    public void setTotal(float total) {
-        this.total = total;
-    }
-
 
 }

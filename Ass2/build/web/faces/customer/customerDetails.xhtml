@@ -4,12 +4,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
     xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:ago="http://java.sun.com/jsf/composite/apress" xml:lang="en"
     lang="en">
+    
+    <!--This is the view that will display the customer's details-->
 
 <f:metadata>
     <f:viewParam name="id" value="#{customerController.customer.id}" />
     <f:viewAction action="#{customerController.viewCustomerDetails }" />
 </f:metadata>
-
+<!--This is the view that will list the details of the customer-->
 <ui:composition template="../templates/layout.xhtml">
     <ui:define name="title">Customer:#{customerController.customer.name}</ui:define>
     <ui:define name="content">
@@ -50,7 +52,7 @@
                 <f:facet name="header">
                     <h:outputText value="Unit Price" />
                 </f:facet>
-                <h:outputText value="#{it.car.price}">
+                <h:outputText value="#{it.unitPrice}">
                     <f:convertNumber currencySymbol="$" type="currency" />
                 </h:outputText>
             </h:column>
@@ -67,7 +69,7 @@
                 <f:facet name="header">
                     <h:outputText value="Total Price" />
                 </f:facet>
-                <h:outputText value="#{it.quantity*it.car.price}">
+                <h:outputText value="#{it.quantity*it.unitPrice}">
                     <f:convertNumber type="currency" currencySymbol="$" />
                 </h:outputText>
             </h:column>

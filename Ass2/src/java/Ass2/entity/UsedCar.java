@@ -5,8 +5,6 @@ package Ass2.entity;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,11 +16,15 @@ import javax.persistence.NamedQuery;
 
 /**
  *
- * @author Faqiu Sun
+ *
+ * @author Hirvi
  */
 @Entity
 @NamedQuery(name = UsedCar.QueryAllCars, query = "select u from UsedCar u")
-@NamedQuery(name = UsedCar.SearchUsedCarByReference, query = "select n from UsedCar n where n.referenceNumber=:referenceNumber")
+@NamedQuery(name = UsedCar.SearchUsedCarByReference, query = "select u from UsedCar u where u.referenceNumber=:referenceNumber")
+/**
+ * This stores the details of the used cars.
+ */
 public class UsedCar extends Car {
 
     public static final String SearchUsedCarByReference = "UsedCar.SearchUsedCarByReference";

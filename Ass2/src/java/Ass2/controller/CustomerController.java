@@ -41,8 +41,9 @@ import javax.faces.context.FacesContext;
 /**
  *
  * @author Faqiu Sun
- * @edited Hirvi
  *
+ * This class uses the customer and order beans to to display customers and
+ * their corresponding orders
  */
 @Named(value = "customerController")
 @ManagedBean
@@ -64,6 +65,11 @@ public class CustomerController {
         this.projectController = projectController;
     }
 
+    /**
+     *
+     * @return It returns the list of customers by search keyword and the opens
+     * the resulting xhtml that will display the result
+     */
     public String searchCustomers() {
         customerList = cEJB.findCustomers(customer.getName());
 
@@ -76,6 +82,10 @@ public class CustomerController {
         return "foundCustomers.xhtml";
     }
 
+    /**
+     *
+     * @return
+     */
     public String doCreateCustomer() {
         //usedCarList.add(usedCar);
         Customer c = cEJB.createCustomer(customer);
@@ -86,6 +96,9 @@ public class CustomerController {
         return "customerList.xhtml";
     }
 
+    /**
+     * DIsplay the details of the customers.
+     */
     public void viewCustomerDetails() {
         customer = cEJB.findCustomerById(customer.getId());
         List<Order> orders = oEJB.findOrdersByCustomerId(customer);
@@ -100,11 +113,20 @@ public class CustomerController {
         this.customer = customer;
     }
 
+    /**
+     * Returns the list of customers using the beans defined
+     *
+     * @return
+     */
     public List<Customer> getCustomerList() {
         // customerList = bEJB.findAllCustomers();
         return customerList;
     }
 
+    /**
+     *
+     * @return Return all the customers using the bean
+     */
     public List<Customer> getAllCustomerList() {
         customerList = cEJB.findAllCustomers();
         for (Customer c : customerList) {
@@ -114,6 +136,11 @@ public class CustomerController {
         return customerList;
     }
 
+    /**
+     * Setter method for parameter of the class that contains the customer list
+     *
+     * @param customerList
+     */
     public void setCustomerList(List<Customer> customerList) {
         this.customerList = customerList;
     }

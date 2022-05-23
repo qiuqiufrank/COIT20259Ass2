@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
     xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:ago="http://java.sun.com/jsf/composite/apress" xml:lang="en"
     lang="en">
-
+<!--This is the view that displays the orders found-->
 <ui:composition template="../templates/foundTemplate.xhtml">
     <ui:define name="foundTitle">The Found Car Orders</ui:define>
     <ui:define name="searchResults">
@@ -44,7 +44,7 @@
                 <f:facet name="header">
                     <h:outputText value="Unit Price" />
                 </f:facet>
-                <h:outputText value="#{it.car.price}" />
+                <h:outputText value="#{it.unitPrice}" />
             </h:column>
             <h:column>
                 <f:facet name="header">
@@ -56,7 +56,7 @@
                 <f:facet name="header">
                     <h:outputText value="Total" />
                 </f:facet>
-                <h:outputText value="#{it.total}">
+                <h:outputText value="#{it.quantity*it.unitPrice}">
                     <f:convertNumber type="currency" currencySymbol="$" />
                 </h:outputText>
             </h:column>

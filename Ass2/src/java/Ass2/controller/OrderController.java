@@ -63,10 +63,8 @@ public class OrderController {
     private Order order = new Order();
     private List<Order> orderList = new ArrayList<Order>();
     private Long customerIdInOrder;
-    private Long orderIdToDelete=null;
+    private Long orderIdToDelete = null;
     private String carReferenceInOrder;
-
-
 
     public void setProjectController(ProjectController projectController) {
         this.projectController = projectController;
@@ -84,9 +82,14 @@ public class OrderController {
         return "foundOrders.xhtml";
     }
 
+    /**
+     *
+     * @return This will create the order and display the appropriated messages
+     * onto the ui elements of
+     */
     public String doCreateOrder() {
 
-        int quantityInOrder=order.getQuantity();
+        int quantityInOrder = order.getQuantity();
         order.setId(null);
         //Get selected Car by reference number;
         Car selectedCar = projectController.getAllCarList().stream().filter(c -> carReferenceInOrder.equals(c.getReferenceNumber()))
@@ -94,12 +97,12 @@ public class OrderController {
         order.setCar(selectedCar);
 
         //Get selected customer by ID
-        Customer selectedCustomer = customerController.getAllCustomerList().stream().filter(c -> customerIdInOrder.equals(c.getId()))
+        Customer selectedCustomer = cEJB.findAllCustomers().stream().filter(c -> customerIdInOrder.equals(c.getId()))
                 .collect(Collectors.toList()).get(0);
         order.setCustomer(selectedCustomer);
         FacesContext ctx = FacesContext.getCurrentInstance();
 
-        if (quantityInOrder <1) {
+        if (quantityInOrder < 1) {
             ctx.addMessage(projectController.getErrorComponent().getClientId(), new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error, cars quantity:", "Minimum quantity is 1"));
             return null;
         }
@@ -107,10 +110,13 @@ public class OrderController {
             ctx.addMessage(projectController.getErrorComponent().getClientId(), new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error, not enough cars:", "Maximum quantity is " + selectedCar.getQuantity()));
             return null;
         }
-
+        //Store price for a order
+        order.setUnitPrice(selectedCar.getPrice());
         order.setQuantity(quantityInOrder);
-        selectedCar.setQuantity(selectedCar.getQuantity()-quantityInOrder);
+
+        selectedCar.setQuantity(selectedCar.getQuantity() - quantityInOrder);
         projectController.updateCar(selectedCar);
+
         Order o = oEJB.createOrder(order);
 
         ctx.addMessage(projectController.getInfoComponent().getClientId(), new FacesMessage(FacesMessage.SEVERITY_INFO, "Successfully created the order:", o.getCustomer().getName() + " " + o.getCar().getReferenceNumber()));
@@ -123,69 +129,115 @@ public class OrderController {
         return order;
     }
 
+    /**
+     *
+     * @param order Setting parameter order
+     */
     public void setOrder(Order order) {
         this.order = order;
     }
 
+    /**
+     *
+     * @return Parameter of which id is to be deleted
+     */
     public Long getOrderIdToDelete() {
         return orderIdToDelete;
     }
 
+    /**
+     *
+     * @param orderIdToDelete
+     */
     public void setOrderIdToDelete(Long orderIdToDelete) {
         this.orderIdToDelete = orderIdToDelete;
     }
-        
 
+    /**
+     *
+     * @return Return
+     */
     public List<Order> getOrderList() {
         // orderList = bEJB.findAllOrders();
         return orderList;
     }
 
+    /**
+     *
+     * @return returns a list of orders.
+     */
     public List<Order> getAllOrderList() {
         orderList = oEJB.findAllOrders();
         return orderList;
     }
 
+    /**
+     *
+     * @param orderList This sets the list of orders.
+     */
     public void setOrderList(List<Order> orderList) {
         this.orderList = orderList;
     }
 
+    /**
+     *
+     * @return
+     */
     public Long getCustomerIdInOrder() {
         return customerIdInOrder;
     }
 
-    public String carDetail(Car car){
-        if(car instanceof NewCar){
+    /**
+     *
+     * @param car Displays THe result i.e. the car details
+     * @return The page details
+     */
+    public String carDetail(Car car) {
+        if (car instanceof NewCar) {
             return "/faces/newCar/newCarDetails";
-        }
-        else{
+        } else {
             return "/faces/usedCar/usedCarDetails";
         }
     }
 
+    /**
+     * This deletes the given order by parameter orderIdToDelete
+     */
     public void deleteOrder() {
-        List<Order> res=oEJB.findOrders(orderIdToDelete );
+        List<Order> res = oEJB.findOrders(orderIdToDelete);
         if (res.size() > 0) {
-            Order o=res.get(0);
-            Car selectedCar=o.getCar();
+            Order o = res.get(0);
+            Car selectedCar = o.getCar();
             oEJB.deleteOrder(o);
-            selectedCar.setQuantity(selectedCar.getQuantity()+o.getQuantity());
+            selectedCar.setQuantity(selectedCar.getQuantity() + o.getQuantity());
             projectController.updateCar(selectedCar);
         }
         orderIdToDelete = null;
     }
 
+    /**
+     *
+     * @param customerIdInOrder is set as the class parameter
+     */
     public void setCustomerIdInOrder(Long customerIdInOrder) {
         this.customerIdInOrder = customerIdInOrder;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getCarReferenceInOrder() {
         return carReferenceInOrder;
     }
 
+    /**
+     *
+     * @param carReferenceInOrder this is the setter method for
+     * carReferenceInOrder
+     */
     public void setCarReferenceInOrder(String carReferenceInOrder) {
         this.carReferenceInOrder = carReferenceInOrder;
     }
-
 
 }

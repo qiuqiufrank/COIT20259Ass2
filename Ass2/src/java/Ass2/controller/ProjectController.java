@@ -90,26 +90,43 @@ public class ProjectController {
 
     }
 
-    // private String searchCarReference;
-    // private String searchOrderId;
-    // private List<Car> carList = new ArrayList<Car>();
-
+    /**
+     * return an info component
+     *
+     * @return
+     */
     public UIComponent getInfoComponent() {
         return infoComponent;
     }
 
+    /**
+     *
+     * @param infoComponent The infoComponent of the UI/View is set here
+     */
     public void setInfoComponent(UIComponent infoComponent) {
         this.infoComponent = infoComponent;
     }
 
+    /**
+     *
+     * @return The error component of the UI
+     */
     public UIComponent getErrorComponent() {
         return errorComponent;
     }
 
+    /**
+     *
+     * @param errorComponent
+     */
     public void setErrorComponent(UIComponent errorComponent) {
         this.errorComponent = errorComponent;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<Car> getAllCarList() {
         List<Car> carList = Stream.of(ucEJB.findAllUsedCars(), ncEJB.findAllNewCars())
                 .flatMap(Collection::stream)
@@ -117,6 +134,10 @@ public class ProjectController {
         return carList;
     }
 
+    /**
+     *
+     * @param car
+     */
     public void updateCar(Car car) {
         if (car instanceof NewCar) {
             NewCar nc = (NewCar) car;

@@ -59,39 +59,74 @@ public class UsedCarController {
         this.projectController = projectController;
     }
 
+    /**
+     *
+     * @return Stored used cars.
+     */
     public UsedCar getUsedCar() {
         return usedCar;
     }
 
+    /**
+     *
+     * @param usedCar is set here which declared in the parameters class
+     */
     public void setUsedCar(UsedCar usedCar) {
         this.usedCar = usedCar;
     }
 
+    /**
+     *
+     * @return Create the new user and redirect to the usedcar List page
+     */
     public String doCreateUsedCar() {
         //usedCarList.add(usedCar);
         UsedCar nc = ucEJB.createUsedCar(usedCar);
         FacesContext ctx = FacesContext.getCurrentInstance();
-        ctx.addMessage(projectController.getInfoComponent().getClientId(), new FacesMessage(FacesMessage.SEVERITY_INFO, "Successfully created the used car:", nc.getMake() + " " + nc.getModel()));
+        ctx.addMessage(projectController.getInfoComponent().getClientId(),
+                new FacesMessage(FacesMessage.SEVERITY_INFO,
+                        "Successfully created the used car:", nc.getMake()
+                        + " " + nc.getModel()));
         return "usedCarList.xhtml";
     }
 
-
+    /**
+     *
+     * @return Redirects the page to found used cars
+     */
     public String searchUsedCars() {
         usedCarList = ucEJB.findUsedCars(usedCar.getReferenceNumber());
         return "foundUsedCars.xhtml";
     }
+
+    /**
+     * This will display the resulting used cars.
+     */
     public void viewUsedCarDetails() {
         usedCar = ucEJB.findUsedCars(usedCar.getReferenceNumber()).get(0);
     }
 
+    /**
+     *
+     * @return The list of used cars
+     */
     public List<UsedCar> getUsedCarList() {
         return usedCarList;
     }
 
+    /**
+     *
+     * @return The usedCar list query called and stored in this list
+     */
     public List<UsedCar> getAllUsedCarList() {
         usedCarList = ucEJB.findAllUsedCars();
         return usedCarList;
     }
+
+    /**
+     *
+     * @param usedCarList This will set the class parameter
+     */
     public void setUsedCarList(List<UsedCar> usedCarList) {
         this.usedCarList = usedCarList;
     }
