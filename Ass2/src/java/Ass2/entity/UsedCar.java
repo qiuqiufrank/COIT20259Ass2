@@ -19,10 +19,14 @@ import javax.persistence.NamedQuery;
 /**
  *
  * @author Faqiu Sun
+ * @edited Hirvi
  */
 @Entity
 @NamedQuery(name = UsedCar.QueryAllCars, query = "select u from UsedCar u")
 @NamedQuery(name = UsedCar.SearchUsedCarByReference, query = "select n from UsedCar n where n.referenceNumber=:referenceNumber")
+/**
+ * This stores the details of the used cars.
+ */
 public class UsedCar extends Car {
 
     public static final String SearchUsedCarByReference = "UsedCar.SearchUsedCarByReference";

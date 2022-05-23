@@ -24,12 +24,16 @@ import javax.persistence.Transient;
 /**
  *
  * @author Faqiu Sun
+ * @edited Hirvi
  */
 @Entity
 @Table(name="orderline")
 @NamedQuery(name = Order.QueryAllOrders, query = "select o from Order o")
 @NamedQuery(name = Order.SearchOrderById, query = "select o from Order  o where o.id=:id")
 @NamedQuery(name = Order.SearchOrdersByCustomer, query = "select o from Order  o where o.customer=:customer")
+/**
+ * This is the order class that stores the new order details or fetched details.
+ */
 public class Order implements Serializable {
 
 

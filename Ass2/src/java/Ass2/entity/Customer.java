@@ -20,12 +20,16 @@ import javax.persistence.Transient;
 
 /**
  *
- * @author Faqiu Sun
+ * @author Hirvi
  */
+ 
 @Entity
 @NamedQuery(name = Customer.QueryAllCustomers, query = "select c from Customer c")
 @NamedQuery(name = Customer.QueryCustomerByID, query = "select c from Customer  c where c.id=:id")
 @NamedQuery(name = Customer.SearchCustomerByName, query = "select c from Customer  c where c.name=:name")
+/**
+ * This stores the customer details
+ */
 public class Customer implements Serializable {
 
     public static final String SearchCustomerByName= "Customer.SearchCustomerByName";

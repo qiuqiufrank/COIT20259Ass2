@@ -41,6 +41,7 @@ import javax.faces.context.FacesContext;
 /**
  *
  * @author Faqiu Sun
+ * @edited Hirvi
  */
 @Named(value = "orderController")
 @ManagedBean
@@ -83,7 +84,11 @@ public class OrderController {
         //    customerList.clear();
         return "foundOrders.xhtml";
     }
-
+/**
+ * 
+ * @return This will create the order and display the appropriated messages onto the
+ * ui elements of 
+ */
     public String doCreateOrder() {
 
         int quantityInOrder=order.getQuantity();
@@ -123,37 +128,63 @@ public class OrderController {
         return order;
     }
 
+    /**
+     * 
+     * @param order Setting parameter order
+     */
     public void setOrder(Order order) {
         this.order = order;
     }
-
+/**
+ * 
+ * @return Parameter of which id is to be deleted
+ */
     public Long getOrderIdToDelete() {
         return orderIdToDelete;
     }
-
+/**
+ * 
+ * @param orderIdToDelete  
+ */
     public void setOrderIdToDelete(Long orderIdToDelete) {
         this.orderIdToDelete = orderIdToDelete;
     }
         
-
+/**
+ * 
+ * @return Return 
+ */
     public List<Order> getOrderList() {
         // orderList = bEJB.findAllOrders();
         return orderList;
     }
-
+/**
+ * 
+ * @return returns a list of orders.
+ */
     public List<Order> getAllOrderList() {
         orderList = oEJB.findAllOrders();
         return orderList;
     }
-
+/**
+ * 
+ * @param orderList This sets the list of orders.
+ */
     public void setOrderList(List<Order> orderList) {
         this.orderList = orderList;
     }
-
+/**
+ * 
+ * @return 
+ */
     public Long getCustomerIdInOrder() {
         return customerIdInOrder;
     }
-
+/**
+ * 
+ * @param car Displays THe result i.e. the car details
+ * @return  The page details
+ */
     public String carDetail(Car car){
         if(car instanceof NewCar){
             return "/faces/newCar/newCarDetails";
@@ -162,7 +193,9 @@ public class OrderController {
             return "/faces/usedCar/usedCarDetails";
         }
     }
-
+/**
+ * This deletes the given order by parameter orderIdToDelete
+ */
     public void deleteOrder() {
         List<Order> res=oEJB.findOrders(orderIdToDelete );
         if (res.size() > 0) {
@@ -174,15 +207,24 @@ public class OrderController {
         }
         orderIdToDelete = null;
     }
-
+/**
+ * 
+ * @param customerIdInOrder is set as the class parameter
+ */
     public void setCustomerIdInOrder(Long customerIdInOrder) {
         this.customerIdInOrder = customerIdInOrder;
     }
-
+/**
+ * 
+ * @return 
+ */
     public String getCarReferenceInOrder() {
         return carReferenceInOrder;
     }
-
+/**
+ * 
+ * @param carReferenceInOrder this is the setter method for carReferenceInOrder
+ */
     public void setCarReferenceInOrder(String carReferenceInOrder) {
         this.carReferenceInOrder = carReferenceInOrder;
     }

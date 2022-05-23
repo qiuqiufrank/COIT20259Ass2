@@ -15,10 +15,13 @@ import javax.persistence.InheritanceType;
 
 /**
  *
- * @author Faqiu Sun
+ * @author Hirvi 
  */
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
+/**
+ * This is the Car class that has the car details 
+ */
 public class Car implements Serializable {
 
     private static final long serialVersionUID = 1L;

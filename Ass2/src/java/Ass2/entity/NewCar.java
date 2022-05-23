@@ -19,10 +19,14 @@ import javax.persistence.NamedQuery;
 /**
  *
  * @author Faqiu Sun
+ * @edited Hirvi
  */
 @Entity
 @NamedQuery(name = NewCar.QueryAllCars, query = "select n from NewCar n")
 @NamedQuery(name = NewCar.SearchNewCarByReference, query = "select n from NewCar n where n.referenceNumber=:referenceNumber")
+/**
+ * This stores the details of new car.
+ */
 public class NewCar extends Car {
 
     public static final String QueryAllCars = "NewCar.QueryAll";
