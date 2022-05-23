@@ -9,15 +9,11 @@
       xmlns:ago="http://java.sun.com/jsf/composite/apress" xml:lang="en" lang="en">
     
 <!--This is the view that will display the list of the customers-->
-
     <ui:composition template="../templates/layout.xhtml">
-        <ui:define name="title">List all the customer</ui:define>
+        <ui:define name="title">List of customers</ui:define>
         <ui:define name="content">
-            <h:messages id="status" showDetail="true" style="color:green"/>
         <h:form class="form">
             <h:dataTable class="data-table" value="#{customerController.getAllCustomerList()}" var="it" border="1">
-
-
                 <h:column>
                     <f:facet name="header">
                         <h:outputText value="Name"/>

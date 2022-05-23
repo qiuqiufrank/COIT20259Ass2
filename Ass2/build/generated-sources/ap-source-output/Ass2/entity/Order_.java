@@ -11,6 +11,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 @StaticMetamodel(Order.class)
 public class Order_ { 
 
+    public static volatile SingularAttribute<Order, Float> unitPrice;
     public static volatile SingularAttribute<Order, Integer> quantity;
     public static volatile SingularAttribute<Order, Car> car;
     public static volatile SingularAttribute<Order, Long> id;
