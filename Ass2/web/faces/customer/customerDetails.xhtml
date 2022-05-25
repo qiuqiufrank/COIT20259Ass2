@@ -2,84 +2,84 @@
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
-    xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:ago="http://java.sun.com/jsf/composite/apress" xml:lang="en"
-    lang="en">
-    
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:ago="http://java.sun.com/jsf/composite/apress" xml:lang="en"
+      lang="en">
+
     <!--This is the view that will display the customer's details-->
 
-<f:metadata>
-    <f:viewParam name="id" value="#{customerController.customer.id}" />
-    <f:viewAction action="#{customerController.viewCustomerDetails }" />
-</f:metadata>
-<!--This is the view that will list the details of the customer-->
-<ui:composition template="../templates/layout.xhtml">
-    <ui:define name="title">Customer:#{customerController.customer.name}</ui:define>
-    <ui:define name="content">
-        <h2>Details</h2>
-        <table class="table" border="0">
-            <ago:displayRow name="ID" value="#{customerController.customer.id}" />
-            <ago:displayRow name="Name" value="#{customerController.customer.name}" />
-            <ago:displayRow name="Phone Number" value="#{customerController.customer.phoneNumber}" />
-            <ago:displayRow name="Address" value="#{customerController.customer.address}" />
-            <ago:displayRow name="Email Address" value="#{customerController.customer.email}" />
-        </table>
+    <f:metadata>
+        <f:viewParam name="id" value="#{customerController.customer.id}" />
+        <f:viewAction action="#{customerController.viewCustomerDetails }" />
+    </f:metadata>
+    <!--This is the view that will list the details of the customer-->
+    <ui:composition template="../templates/layout.xhtml">
+        <ui:define name="title">Customer:#{customerController.customer.name}</ui:define>
+        <ui:define name="content">
+            <h2>Details</h2>
+            <table class="table" border="0">
+                <ago:displayRow name="ID" value="#{customerController.customer.id}" />
+                <ago:displayRow name="Name" value="#{customerController.customer.name}" />
+                <ago:displayRow name="Phone Number" value="#{customerController.customer.phoneNumber}" />
+                <ago:displayRow name="Address" value="#{customerController.customer.address}" />
+                <ago:displayRow name="Email Address" value="#{customerController.customer.email}" />
+            </table>
 
-        <h2>Car Orders(#{customerController.customer.orders.size()})</h2>
-        <h:dataTable class="data-table" value="#{customerController.customer.orders}" var="it" border="1">
-            <h:column>
-                <f:facet name="header">
-                    <h:outputText value="Order#" />
-                </f:facet>
-                <h:outputText value="#{it.id}" />
-            </h:column>
+            <h2>Car Orders(#{customerController.customer.orders.size()})</h2>
+            <h:dataTable class="data-table" value="#{customerController.customer.orders}" var="it" border="1">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Order#" />
+                    </f:facet>
+                    <h:outputText value="#{it.id}" />
+                </h:column>
 
-            <h:column>
-                <f:facet name="header">
-                    <h:outputText value="Time Created" />
-                </f:facet>
-                <h:outputText value="#{it.createAt}" />
-            </h:column>
-
-
-            <h:column>
-                <f:facet name="header">
-                    <h:outputText value="Car" />
-                </f:facet>
-                <h:outputText value="#{it.car.model}" />
-            </h:column>
-
-            <h:column>
-                <f:facet name="header">
-                    <h:outputText value="Unit Price" />
-                </f:facet>
-                <h:outputText value="#{it.unitPrice}">
-                    <f:convertNumber currencySymbol="$" type="currency" />
-                </h:outputText>
-            </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Time Created" />
+                    </f:facet>
+                    <h:outputText value="#{it.createAt}" />
+                </h:column>
 
 
-            <h:column>
-                <f:facet name="header">
-                    <h:outputText value="Quantity" />
-                </f:facet>
-                <h:outputText value="#{it.quantity}" />
-            </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Car" />
+                    </f:facet>
+                    <h:outputText value="#{it.car.model}" />
+                </h:column>
 
-            <h:column>
-                <f:facet name="header">
-                    <h:outputText value="Total Price" />
-                </f:facet>
-                <h:outputText value="#{it.quantity*it.unitPrice}">
-                    <f:convertNumber type="currency" currencySymbol="$" />
-                </h:outputText>
-            </h:column>
-        </h:dataTable>
-        <ago:link name="Customer List" href="customerList.faces" />
-        <ago:link name="Main Page" href="../../index.faces" />
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Unit Price" />
+                    </f:facet>
+                    <h:outputText value="#{it.unitPrice}">
+                        <f:convertNumber currencySymbol="$" type="currency" />
+                    </h:outputText>
+                </h:column>
 
 
-    </ui:define>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Quantity" />
+                    </f:facet>
+                    <h:outputText value="#{it.quantity}" />
+                </h:column>
 
-</ui:composition>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Total Price" />
+                    </f:facet>
+                    <h:outputText value="#{it.quantity*it.unitPrice}">
+                        <f:convertNumber type="currency" currencySymbol="$" />
+                    </h:outputText>
+                </h:column>
+            </h:dataTable>
+            <ago:link name="Customer List" href="customerList.faces" />
+            <ago:link name="Main Page" href="../../index.faces" />
+
+
+        </ui:define>
+
+    </ui:composition>
 
 </html>

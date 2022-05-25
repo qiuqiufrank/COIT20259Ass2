@@ -5,9 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-        xmlns:f = "http://java.sun.com/jsf/core"    
+      xmlns:f = "http://java.sun.com/jsf/core"    
       xmlns:ago="http://java.sun.com/jsf/composite/apress" xml:lang="en" lang="en">
-<!--This is the view for creating new order -->
+    <!--This is the view for creating new order -->
     <ui:composition template="../templates/layout.xhtml">
         <ui:define name="title">Create a new Car Order</ui:define>
         <ui:define name="content">
@@ -30,7 +30,7 @@
                     </tr>
 
 
-                   <tr>
+                    <tr>
                         <td>
                             <h:outputLabel value="Car : "/>
                         </td>
@@ -44,12 +44,12 @@
                             <h:message style="color:red" id="msgorder" for="inputorder" />
                         </td>
                     </tr>
-                    
-                    
+
+
                     <ago:inputRow name="Quantity" iid="ea" value="#{orderController.order.quantity}" />
                 </table>
 
-                 <h:commandButton class="button" value="Create a Car Order" action="#{orderController.doCreateOrder}"/> 
+                <h:commandButton class="button" value="Create a Car Order" action="#{orderController.doCreateOrder}"/> 
             </h:form>
 
             <div>

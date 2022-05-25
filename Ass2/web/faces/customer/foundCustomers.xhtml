@@ -2,49 +2,49 @@
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
-    xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:ago="http://java.sun.com/jsf/composite/apress" xml:lang="en"
-    lang="en">
-    
-<!--This is the view that displays the customers found-->
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:ago="http://java.sun.com/jsf/composite/apress" xml:lang="en"
+      lang="en">
 
-<ui:composition template="../templates/foundTemplate.xhtml">
-    <ui:define name="foundTitle">The Found customers</ui:define>
-    <ui:define name="searchResults">
-        <h:dataTable class="data-table found" value="#{customerController.customerList}" var="it" border="1">
-            <h:column>
-                <f:facet name="header">
-                    <h:outputText value="Name" />
-                </f:facet>
-                <h:outputText value="#{it.name}" />
-            </h:column>
-            <h:column>
-                <f:facet name="header">
-                    <h:outputText value="Address" />
-                </f:facet>
-                <h:outputText value="#{it.address}" />
-            </h:column>
-            <h:column>
-                <f:facet name="header">
-                    <h:outputText value="Orders" />
-                </f:facet>
-                <h:outputText value="#{it.orders.size()}" />
-            </h:column>
-            <h:column>
-                <f:facet name="header">
-                    <h:outputText value="Action" />
-                </f:facet>
-                <h:link value="View Details" outcome="customerDetails">
-                    <f:param name="id" value="#{it.id}" />
-                </h:link>
-            </h:column>
-        </h:dataTable>
-    </ui:define>
-    <ui:define name="searchStatus">
-        <h>Total customers:#{customerController.customerList.size()} </h>
-    </ui:define>
-    <ui:define name="createNew">
-        <ago:link name="Create a new customer" href="createCustomer.xhtml" />
-    </ui:define>
-</ui:composition>
+    <!--This is the view that displays the customers found-->
+
+    <ui:composition template="../templates/foundTemplate.xhtml">
+        <ui:define name="foundTitle">The Found customers</ui:define>
+        <ui:define name="searchResults">
+            <h:dataTable class="data-table found" value="#{customerController.customerList}" var="it" border="1">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Name" />
+                    </f:facet>
+                    <h:outputText value="#{it.name}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Address" />
+                    </f:facet>
+                    <h:outputText value="#{it.address}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Orders" />
+                    </f:facet>
+                    <h:outputText value="#{it.orders.size()}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Action" />
+                    </f:facet>
+                    <h:link value="View Details" outcome="customerDetails">
+                        <f:param name="id" value="#{it.id}" />
+                    </h:link>
+                </h:column>
+            </h:dataTable>
+        </ui:define>
+        <ui:define name="searchStatus">
+            <h>Total customers:#{customerController.customerList.size()} </h>
+        </ui:define>
+        <ui:define name="createNew">
+            <ago:link name="Create a new customer" href="createCustomer.xhtml" />
+        </ui:define>
+    </ui:composition>
 
 </html>

@@ -4,7 +4,7 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-        xmlns:f = "http://java.sun.com/jsf/core"    
+      xmlns:f = "http://java.sun.com/jsf/core"    
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:ago="http://java.sun.com/jsf/composite/apress" xml:lang="en" lang="en">
 
@@ -12,8 +12,8 @@
         <f:viewParam name="referenceNumber" value="#{newCarController.newCar.referenceNumber}" />
         <f:viewAction action="#{newCarController.viewNewCarDetails }" />
     </f:metadata>
-    
-<!--This is the view that will list the details of the new cars-->
+
+    <!--This is the view that will list the details of the new cars-->
 
     <ui:composition template="../templates/layout.xhtml">
         <ui:define name="title">Details of a Brand New Car</ui:define>
@@ -21,22 +21,22 @@
             <h:form class="form">
                 <table class="table" border="0">
 
-                <ago:displayRow name="Reference Number"  value="#{newCarController.newCar.referenceNumber}" />
-                <ago:displayRow name="Car Make"  value="#{newCarController.newCar.make}" />
-                <ago:displayRow name="Car Model"  value="#{newCarController.newCar.model}" />
-                <ago:displayRow name="Drive Type"  value="#{newCarController.newCar.driveType}" />
-                <ago:displayRow name="Body Color"  value="#{newCarController.newCar.color}" />
-                <ago:displayRow name="Transmission"  value="#{newCarController.newCar.transmission}" />
-                <ago:displayRow name="Car Engine"  value="#{newCarController.newCar.engine}" />
-                <ago:displayRow name="Fuel Type"  value="#{newCarController.newCar.fuelType}" />
-                <ago:displayRow name="Number of Doors"  value="#{newCarController.newCar.doors}" />
-                <ago:displayRow name="Number of Seats"  value="#{newCarController.newCar.seats}" />
-                <ago:displayRow name="Price"  value="#{newCarController.newCar.price}" />
+                    <ago:displayRow name="Reference Number"  value="#{newCarController.newCar.referenceNumber}" />
+                    <ago:displayRow name="Car Make"  value="#{newCarController.newCar.make}" />
+                    <ago:displayRow name="Car Model"  value="#{newCarController.newCar.model}" />
+                    <ago:displayRow name="Drive Type"  value="#{newCarController.newCar.driveType}" />
+                    <ago:displayRow name="Body Color"  value="#{newCarController.newCar.color}" />
+                    <ago:displayRow name="Transmission"  value="#{newCarController.newCar.transmission}" />
+                    <ago:displayRow name="Car Engine"  value="#{newCarController.newCar.engine}" />
+                    <ago:displayRow name="Fuel Type"  value="#{newCarController.newCar.fuelType}" />
+                    <ago:displayRow name="Number of Doors"  value="#{newCarController.newCar.doors}" />
+                    <ago:displayRow name="Number of Seats"  value="#{newCarController.newCar.seats}" />
+                    <ago:displayRow name="Price"  value="#{newCarController.newCar.price}" />
 
-                <ago:displayRow name="Warranty"  value="#{newCarController.newCar.warranty}" />
-                <ago:displayRow name="Extending Warranty"  value="#{newCarController.newCar.extendingWarranty}" />
-                <ago:displayRow name="Road Side Assistance Package"  value="#{newCarController.newCar.roadsideAssistancePackages}" />
-                <ago:displayRow name="Number of Cars"  value="#{newCarController.newCar.quantity}" />
+                    <ago:displayRow name="Warranty"  value="#{newCarController.newCar.warranty}" />
+                    <ago:displayRow name="Extending Warranty"  value="#{newCarController.newCar.extendingWarranty}" />
+                    <ago:displayRow name="Road Side Assistance Package"  value="#{newCarController.newCar.roadsideAssistancePackages}" />
+                    <ago:displayRow name="Number of Cars"  value="#{newCarController.newCar.quantity}" />
 
                 </table>
             </h:form>

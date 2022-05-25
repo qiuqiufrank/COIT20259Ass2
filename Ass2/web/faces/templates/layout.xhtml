@@ -7,7 +7,7 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ago="http://java.sun.com/jsf/composite/apress"
       xml:lang="en" lang="en">
-
+    <!--layout template for all faces-->
     <h:head>
         <h:outputStylesheet library="css" name="style.css"/>
         <title>
@@ -20,7 +20,7 @@
         </h1>
         <h:outputText id="error" value="" binding="#{projectController.errorComponent}" />
         <h:messages for="error" showDetail="true" style="color:#b00000" />
-        
+
         <h:outputText id="info" value="" binding="#{projectController.infoComponent}" />
         <h:messages for="info" showDetail="true" style="color:#008000" />
 

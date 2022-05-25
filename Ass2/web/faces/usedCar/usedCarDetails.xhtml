@@ -4,7 +4,7 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-        xmlns:f = "http://java.sun.com/jsf/core"    
+      xmlns:f = "http://java.sun.com/jsf/core"    
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:ago="http://java.sun.com/jsf/composite/apress" xml:lang="en" lang="en">
 
@@ -12,31 +12,31 @@
         <f:viewParam name="referenceNumber" value="#{usedCarController.usedCar.referenceNumber}" />
         <f:viewAction action="#{usedCarController.viewUsedCarDetails }" />
     </f:metadata>
-<!--This is the view that will list the details of the found used cars-->
+    <!--This is the view that will list the details of the found used cars-->
     <ui:composition template="../templates/layout.xhtml">
         <ui:define name="title">Details of a Used Car</ui:define>
         <ui:define name="content">
             <h:form class="form">
                 <table class="table" border="0">
 
-                <ago:displayRow name="Reference Number"  value="#{usedCarController.usedCar.referenceNumber}" />
-                <ago:displayRow name="Car Make"  value="#{usedCarController.usedCar.make}" />
-                <ago:displayRow name="Car Model"  value="#{usedCarController.usedCar.model}" />
-                <ago:displayRow name="Drive Type"  value="#{usedCarController.usedCar.driveType}" />
-                <ago:displayRow name="Body Color"  value="#{usedCarController.usedCar.color}" />
-                <ago:displayRow name="Transmission"  value="#{usedCarController.usedCar.transmission}" />
-                <ago:displayRow name="Car Engine"  value="#{usedCarController.usedCar.engine}" />
-                <ago:displayRow name="Fuel Type"  value="#{usedCarController.usedCar.fuelType}" />
-                <ago:displayRow name="Number of Doors"  value="#{usedCarController.usedCar.doors}" />
-                <ago:displayRow name="Number of Seats"  value="#{usedCarController.usedCar.seats}" />
-                <ago:displayRow name="Price"  value="#{usedCarController.usedCar.price}" />
+                    <ago:displayRow name="Reference Number"  value="#{usedCarController.usedCar.referenceNumber}" />
+                    <ago:displayRow name="Car Make"  value="#{usedCarController.usedCar.make}" />
+                    <ago:displayRow name="Car Model"  value="#{usedCarController.usedCar.model}" />
+                    <ago:displayRow name="Drive Type"  value="#{usedCarController.usedCar.driveType}" />
+                    <ago:displayRow name="Body Color"  value="#{usedCarController.usedCar.color}" />
+                    <ago:displayRow name="Transmission"  value="#{usedCarController.usedCar.transmission}" />
+                    <ago:displayRow name="Car Engine"  value="#{usedCarController.usedCar.engine}" />
+                    <ago:displayRow name="Fuel Type"  value="#{usedCarController.usedCar.fuelType}" />
+                    <ago:displayRow name="Number of Doors"  value="#{usedCarController.usedCar.doors}" />
+                    <ago:displayRow name="Number of Seats"  value="#{usedCarController.usedCar.seats}" />
+                    <ago:displayRow name="Price"  value="#{usedCarController.usedCar.price}" />
 
-                <ago:displayRow name="Odometer"  value="#{usedCarController.usedCar.odometer}" />
-                <ago:displayRow name="Rego No."  value="#{usedCarController.usedCar.regoNo}" />
-                <ago:displayRow name="Rego Expiry."  value="#{usedCarController.usedCar.regoExpiry}" />
-                <ago:displayRow name="Service History"  value="#{usedCarController.usedCar.serviceHistory}" />
-                <ago:displayRow name="Vehicle Identification Number"  value="#{usedCarController.usedCar.vin}" />
-                <ago:displayRow name="Car History"  value="#{usedCarController.usedCar.carHistory}" />
+                    <ago:displayRow name="Odometer"  value="#{usedCarController.usedCar.odometer}" />
+                    <ago:displayRow name="Rego No."  value="#{usedCarController.usedCar.regoNo}" />
+                    <ago:displayRow name="Rego Expiry."  value="#{usedCarController.usedCar.regoExpiry}" />
+                    <ago:displayRow name="Service History"  value="#{usedCarController.usedCar.serviceHistory}" />
+                    <ago:displayRow name="Vehicle Identification Number"  value="#{usedCarController.usedCar.vin}" />
+                    <ago:displayRow name="Car History"  value="#{usedCarController.usedCar.carHistory}" />
 
                 </table>
             </h:form>

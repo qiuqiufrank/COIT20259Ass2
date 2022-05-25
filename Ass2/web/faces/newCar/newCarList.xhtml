@@ -2,49 +2,49 @@
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
-    xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core"
-    xmlns:ago="http://java.sun.com/jsf/composite/apress" xml:lang="en" lang="en">
-    
-<!--This is the view that will display the list of the New cars-->
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ago="http://java.sun.com/jsf/composite/apress" xml:lang="en" lang="en">
 
-<ui:composition template="../templates/layout.xhtml">
-    <ui:define name="title">List all the new cars</ui:define>
-    <ui:define name="content">
-        <h:form class="form">
-            <h:dataTable class="data-table" value="#{newCarController.getAllNewCarList()}" var="it" border="1">
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="Make" />
-                    </f:facet>
-                    <h:outputText value="#{it.make}" />
-                </h:column>
+    <!--This is the view that will display the list of the New cars-->
+
+    <ui:composition template="../templates/layout.xhtml">
+        <ui:define name="title">List all the new cars</ui:define>
+        <ui:define name="content">
+            <h:form class="form">
+                <h:dataTable class="data-table" value="#{newCarController.getAllNewCarList()}" var="it" border="1">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Make" />
+                        </f:facet>
+                        <h:outputText value="#{it.make}" />
+                    </h:column>
 
 
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="Model" />
-                    </f:facet>
-                    <h:outputText value="#{it.model}" />
-                </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Model" />
+                        </f:facet>
+                        <h:outputText value="#{it.model}" />
+                    </h:column>
 
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="Reference Number" />
-                    </f:facet>
-                    <h:link value="#{it.referenceNumber}" outcome="newCarDetails">
-                        <f:param name="referenceNumber" value="#{it.referenceNumber}" />
-                    </h:link>
-                </h:column>
-            </h:dataTable>
-            <!-- <p>Total brand new cars: #{newCarController.getAllNewCarList().size()}</p> -->
-        </h:form>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Reference Number" />
+                        </f:facet>
+                        <h:link value="#{it.referenceNumber}" outcome="newCarDetails">
+                            <f:param name="referenceNumber" value="#{it.referenceNumber}" />
+                        </h:link>
+                    </h:column>
+                </h:dataTable>
+                <!-- <p>Total brand new cars: #{newCarController.getAllNewCarList().size()}</p> -->
+            </h:form>
 
-        <div>
-            <ago:link name="Create a brand new car" href="createNewCar.faces" />
-            <ago:link name="Main Page" href="../../index.faces" />
-        </div>
-    </ui:define>
+            <div>
+                <ago:link name="Create a brand new car" href="createNewCar.faces" />
+                <ago:link name="Main Page" href="../../index.faces" />
+            </div>
+        </ui:define>
 
-</ui:composition>
+    </ui:composition>
 
 </html>
