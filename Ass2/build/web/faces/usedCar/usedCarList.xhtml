@@ -13,8 +13,6 @@
         <ui:define name="content">
             <h:form class="form">
                 <h:dataTable class="data-table" value="#{usedCarController.getAllUsedCarList()}" var="it" border="1">
-
-
                     <h:column>
                         <f:facet name="header">
                             <h:outputText value="Make" />
@@ -40,7 +38,7 @@
                     </h:column>
 
                 </h:dataTable>
-                <p>Total used cars: #{newCarController.getAllNewCarList().size()}</p>
+                <p>Total used cars: #{usedCarController.getAllUsedCarList().size()}</p>
             </h:form>
 
             <div >
